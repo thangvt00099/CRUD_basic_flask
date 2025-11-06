@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block head %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='extended_beauty.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="col-md-4 mx-auto col-4">
+    <form action="/login" method="POST">
+        <h2 class="text-center">Log In</h2>
+
+        <div class="form-group mb-3">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email...">
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password"
+                placeholder="Enter your password...">
+        </div>
+
+        <div class="form-check mb-2">
+            <input type="checkbox" id="remember" class="form-check-input" name="remember">
+            <label for="remember" class="form-check-label">Remember Me</label>
+        </div>
+        <button type="submit" class="btn btn-outline-primary w-100">Log In</button>
+    </form>
+</div>
+{% endblock %}
